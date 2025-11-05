@@ -8,20 +8,51 @@ This system automates the car sales workflow, supports CRUD operations, and inte
 
 # Features
 
-- Add new car sales details  
-- View all sales in a clean table format  
-- Edit or delete existing records  
-- Real-time data stored in MySQL database  
-- Simple and modern HTML + CSS interface
+| Feature                             | Description                                                                   |
+| ----------------------------------- | ------------------------------------------------------------------------------|
+|  **AI Car Recommendation Engine**   | Suggests best cars based on budget and fuel type using knowledge-based rules  |
+|  **Performance & Eco Scoring**      | Calculates performance score using engine power, mileage, and price           |
+| **Eco-Friendly Evaluation**         | Assigns an “Eco Score” based on fuel type and manufacturing year              |
+| **Knowledge-Based Reasoning**       | Uses logical rules to filter and rank cars dynamically                        |
+| **Future Expansion**                | Can be extended to include resale prediction, financing suggestions, and more |
+
 
 #  Project Structure
 
+| Module                           | Description                                                         |
+| -------------------------------- | ------------------------------------------------------------------- |
+|  **Sales Management**            | Add, update, delete, and view car sales records                     |
+|  **Customer Details**            | Store and retrieve customer data linked to sales                    |
+|  **Dashboard Insights**          | Shows AI-based insights like top-selling model, total revenue, etc. |
+|  **Expert System Integration**   | AI recommendations displayed dynamically through Flask              |
+|  **Financial Overview**          | Calculates total and average sale value                             |
+|  **Search & Sort (optional)**    | Filter records by car model, customer, or date                      |
+
+
+**# Tech Stack**
+
+Frontend: HTML5, CSS3, Bootstrap 5
+Backend: Python (Flask Framework)
+Database: MySQL
+AI Module: Rule-Based Expert System in Python
+Visualization: Chart.js (optional for dashboard)
+
+
+**Project Structure**
+
 car_sales_management/
 │
-├── app.py # Flask main application
-├── db/ # Database connection files
-│ ├── db_connection.py
-│ └── test_db.py
-├── templates/ # HTML files for frontend
-│ └── index.html
-└── README.md # Project Documentation
+├── app.py                 # Main Flask Application
+├── expert_system.py       # AI Expert System Logic
+├── templates/
+│   ├── index.html         # Main Dashboard UI
+│   ├── edit.html          # Edit Record Page
+│   └── recommend.html     # AI Recommendation Page
+├── static/                # CSS, JS, Images
+├── requirements.txt       # Python Dependencies
+└── README.md              # Project Description File
+
+
+
+
+
