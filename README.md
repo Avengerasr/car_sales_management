@@ -6,6 +6,7 @@ In addition to traditional database management, this project features an AI Expe
 
 This system automates the car sales workflow, supports CRUD operations, and integrates AI reasoning to enhance decision-making for customers and dealers.
 
+
 # Features
 
 | Feature                             | Description                                                                   |
@@ -17,7 +18,9 @@ This system automates the car sales workflow, supports CRUD operations, and inte
 | **Future Expansion**                | Can be extended to include resale prediction, financing suggestions, and more |
 
 
+
 #  Core Functionalities
+
 
 | Module                           | Description                                                         |
 | -------------------------------- | ------------------------------------------------------------------- |
@@ -30,13 +33,14 @@ This system automates the car sales workflow, supports CRUD operations, and inte
 
 
 
+
 # Tech Stack
 
-Frontend: HTML5, CSS3, Bootstrap 5
-Backend: Python (Flask Framework)
-Database: MySQL
-AI Module: Rule-Based Expert System in Python
-Visualization: Chart.js (optional for dashboard)
+**1.Frontend:** HTML5, CSS3, Bootstrap 5
+**2.Backend**: Python (Flask Framework)
+**3.Database**: MySQL
+**4.AI Module:** Rule-Based Expert System in Python
+**5.Visualization**: Chart.js (optional for dashboard)
 
 
 
