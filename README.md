@@ -51,17 +51,17 @@ This system automates the car sales workflow, supports CRUD operations, and inte
 
 ##  Project Structure
 
-car_sales_management/
+**car_sales_management/**
 │|
-|├── app.py                 # Main Flask Application
-├── expert_system.py       # AI Expert System Logic
-├── templates/
-│   |├── index.html         # Main Dashboard UI
-│   |├── edit.html          # Edit Record Page
-│   └|── recommend.html     # AI Recommendation Page
-├── static/                # CSS, JS, Images
-├── requirements.txt       # Python Dependencies
-└── README.md              # Project Description File
+|├── app.py                 # Main Flask Application --
+├── expert_system.py       # AI Expert System Logic --
+├── templates/ --
+│   |├── index.html         # Main Dashboard UI --
+│   |├── edit.html          # Edit Record Page --
+│   └|── recommend.html     # AI Recommendation Page --
+├── static/                # CSS, JS, Images --
+├── requirements.txt       # Python Dependencies --
+└── README.md              # Project Description File --
 
 ---
 
