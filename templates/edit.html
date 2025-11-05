@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Edit Sale</title>
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+</head>
+<body class="bg-light">
+
+<div class="container mt-5">
+  <h2 class="text-center mb-4">Edit Sale Record</h2>
+
+  <form method="POST">
+    <div class="card p-4 shadow-sm">
+      <div class="mb-3">
+        <label class="form-label">Customer Name</label>
+        <input type="text" class="form-control" name="customer"
+               value="{{ sale.customer }}" required>
+      </div>
+      <div class="mb-3">
+        <label class="form-label">Car Model</label>
+        <input type="text" class="form-control" name="car_model"
+               value="{{ sale.car_model }}" required>
+      </div>
+      <div class="mb-3">
+        <label class="form-label">Price</label>
+        <input type="number" step="0.01" class="form-control"
+               name="price" value="{{ sale.price }}" required>
+      </div>
+      <div class="text-center">
+        <button type="submit" class="btn btn-primary">Update</button>
+        <a href="{{ url_for('index') }}" class="btn btn-secondary">Cancel</a>
+      </div>
+    </div>
+  </form>
+</div>
+
+</body>
+</html>

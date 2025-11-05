@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Sales Records</title>
+</head>
+<body>
+  <h1>Sales Summary</h1>
+  <table border="1">
+    <tr>
+      <th>Sale ID</th>
+      <th>Customer</th>
+      <th>Car Model</th>
+      <th>Quantity</th>
+      <th>Total Amount</th>
+      <th>Date</th>
+    </tr>
+    {% for sale in sales %}
+    <tr>
+      <td>{{ sale.sale_id }}</td>
+      <td>{{ sale.cust_name }}</td>
+      <td>{{ sale.model_name }}</td>
+      <td>{{ sale.quantity }}</td>
+      <td>{{ sale.total_amount }}</td>
+      <td>{{ sale.sale_date }}</td>
+    </tr>
+    {% endfor %}
+  </table>
+  <br>
+  <a href="/">🏠 Back to Home</a>
+</body>
+</html>
