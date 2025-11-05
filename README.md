@@ -17,7 +17,7 @@ This system automates the car sales workflow, supports CRUD operations, and inte
 | **Future Expansion**                | Can be extended to include resale prediction, financing suggestions, and more |
 
 
-#  Project Structure
+#  Core Functionalities
 
 | Module                           | Description                                                         |
 | -------------------------------- | ------------------------------------------------------------------- |
@@ -29,7 +29,8 @@ This system automates the car sales workflow, supports CRUD operations, and inte
 |  **Search & Sort (optional)**    | Filter records by car model, customer, or date                      |
 
 
-**# Tech Stack**
+
+# Tech Stack
 
 Frontend: HTML5, CSS3, Bootstrap 5
 Backend: Python (Flask Framework)
@@ -38,16 +39,17 @@ AI Module: Rule-Based Expert System in Python
 Visualization: Chart.js (optional for dashboard)
 
 
+
 **Project Structure**
 
 car_sales_management/
-│
-├── app.py                 # Main Flask Application
+│|
+|├── app.py                 # Main Flask Application
 ├── expert_system.py       # AI Expert System Logic
 ├── templates/
-│   ├── index.html         # Main Dashboard UI
-│   ├── edit.html          # Edit Record Page
-│   └── recommend.html     # AI Recommendation Page
+│   |├── index.html         # Main Dashboard UI
+│   |├── edit.html          # Edit Record Page
+│   └|── recommend.html     # AI Recommendation Page
 ├── static/                # CSS, JS, Images
 ├── requirements.txt       # Python Dependencies
 └── README.md              # Project Description File
