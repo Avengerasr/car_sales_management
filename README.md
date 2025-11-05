@@ -2,7 +2,11 @@
 DBMS Mini Project - Car Sales Management System
 
 The Car Sales Management System is a web-based application built using Flask (Python) and MySQL, designed to help manage car sales, customers, and records efficiently.
+
 In addition to traditional database management, this project features an AI Expert System that provides intelligent insights and car recommendations based on various parameters such as budget, fuel type, performance, and eco score.
+
+In addition to traditional database management, this project features an AI Expert System that provides intelligent insights and car recommendations based on various parameters such as budget, fuel type, performance, and eco score. 
+
 
 This system automates the car sales workflow, supports CRUD operations, and integrates AI reasoning to enhance decision-making for customers and dealers.
 
@@ -34,6 +38,7 @@ This system automates the car sales workflow, supports CRUD operations, and inte
 
 
 
+
 ##  Tech Stack
 
 1. **Frontend:** HTML5, CSS3, Bootstrap 5  
@@ -47,6 +52,15 @@ This system automates the car sales workflow, supports CRUD operations, and inte
 ##  Project Structure
 
 
+
+
+# Tech Stack
+
+**1.Frontend:** HTML5, CSS3, Bootstrap 5
+**2.Backend**: Python (Flask Framework)
+**3.Database**: MySQL
+**4.AI Module:** Rule-Based Expert System in Python
+**5.Visualization**: Chart.js (optional for dashboard)
 
 
 
@@ -64,6 +78,7 @@ car_sales_management/
 ├── static/                # CSS, JS, Images
 ├── requirements.txt       # Python Dependencies
 └── README.md              # Project Description File
+
 
 
 
