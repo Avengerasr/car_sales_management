@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Car Sales Management</title>
+</head>
+<body>
+    <h1>Available Cars</h1>
+    <ul>
+        {% for car in cars %}
+            <li>
+                {{car.Brand}} {{car.Model}} - Rs. {{car.Price}}
+                <a href="/sell/{{car.Car_ID}}">Mark as Sold</a>
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

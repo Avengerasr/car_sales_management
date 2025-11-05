@@ -1,0 +1,46 @@
+CREATE DATABASE car_sales_db;
+USE car_sales_db;
+
+CREATE TABLE Car (
+    Car_ID INT PRIMARY KEY AUTO_INCREMENT,
+    Model VARCHAR(50) NOT NULL,
+    Brand VARCHAR(50),
+    Price DECIMAL(10,2),
+    Status ENUM('Available', 'Sold') DEFAULT 'Available'
+);
+
+CREATE TABLE Customer (
+    Cust_ID INT PRIMARY KEY AUTO_INCREMENT,
+    Name VARCHAR(100) NOT NULL,
+    Phone VARCHAR(15) UNIQUE,
+    Email VARCHAR(100),
+    Address VARCHAR(255)
+);
+
+CREATE TABLE Salesperson (
+    Emp_ID INT PRIMARY KEY AUTO_INCREMENT,
+    Name VARCHAR(100),
+    Contact VARCHAR(15),
+    Department VARCHAR(50)
+);
+
+CREATE TABLE Sale (
+    Sale_ID INT PRIMARY KEY AUTO_INCREMENT,
+    Car_ID INT,
+    Cust_ID INT,
+    Emp_ID INT,
+    Sale_Date DATE,
+    Sale_Amount DECIMAL(10,2),
+    FOREIGN KEY (Car_ID) REFERENCES Car(Car_ID),
+    FOREIGN KEY (Cust_ID) REFERENCES Customer(Cust_ID),
+    FOREIGN KEY (Emp_ID) REFERENCES Salesperson(Emp_ID)
+);
+
+CREATE TABLE Payment (
+    Pay_ID INT PRIMARY KEY AUTO_INCREMENT,
+    Sale_ID INT,
+    Payment_Mode ENUM('Cash','Card','Finance'),
+    Payment_Date DATE,
+    Amount DECIMAL(10,2),
+    FOREIGN KEY (Sale_ID) REFERENCES Sale(Sale_ID)
+);
