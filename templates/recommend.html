@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Car Recommendation System</title>
+    <style>
+        body { font-family: Arial; background: #f4f6f8; text-align: center; }
+        form { margin: 20px auto; background: white; width: 40%; padding: 20px; border-radius: 10px; box-shadow: 0 0 10px #ccc; }
+        input, select { margin: 10px; padding: 8px; width: 80%; }
+        button { padding: 10px 20px; background: #007bff; color: white; border: none; border-radius: 5px; cursor: pointer; }
+        button:hover { background-color: #0056b3; }
+        h2 { color: #333; }
+    </style>
+</head>
+<body>
+    <h1>🚗 AI Expert System: Car Recommendation</h1>
+    <form method="POST">
+        <label>Enter Budget (₹):</label><br>
+        <input type="number" name="budget" required><br>
+
+        <label>Car Type:</label><br>
+        <select name="car_type">
+            <option value="SUV">SUV</option>
+            <option value="Hatchback">Hatchback</option>
+            <option value="Sedan">Sedan</option>
+        </select><br>
+
+        <label>Fuel Type:</label><br>
+        <select name="fuel_type">
+            <option value="petrol">Petrol</option>
+            <option value="diesel">Diesel</option>
+        </select><br><br>
+
+        <button type="submit">Get Recommendation</button>
+    </form>
+
+    {% if result %}
+        <h2>{{ result }}</h2>
+    {% endif %}
+</body>
+</html>

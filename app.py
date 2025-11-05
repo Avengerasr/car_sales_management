@@ -1,6 +1,7 @@
 from flask import Flask, render_template, request, redirect, url_for
 import mysql.connector
 from datetime import datetime
+from expert_system import recommend_car
 
 app = Flask(__name__)
 
@@ -77,6 +78,19 @@ def edit_sale(id):
         cursor.close()
         conn.close()
         return render_template('edit.html', sale=sale)
+
+@app.route('/recommend', methods=['GET', 'POST'])
+def recommend():
+    if request.method == 'POST':
+        budget = int(request.form['budget'])
+        car_type = request.form['car_type']
+        fuel_type = request.form['fuel_type']
+
+        recommendation = recommend_car(budget, car_type, fuel_type)
+        return render_template('recommend.html', result=recommendation)
+
+    return render_template('recommend.html')
+
 
 if __name__ == '__main__':
     app.run(debug=True)
