@@ -51,22 +51,6 @@ This system automates the car sales workflow, supports CRUD operations, and inte
 
 ##  Project Structure
 
-
-
-
-# Tech Stack
-
-**1.Frontend:** HTML5, CSS3, Bootstrap 5
-**2.Backend**: Python (Flask Framework)
-**3.Database**: MySQL
-**4.AI Module:** Rule-Based Expert System in Python
-**5.Visualization**: Chart.js (optional for dashboard)
-
-
-
-
-**Project Structure**
-
 car_sales_management/
 │|
 |├── app.py                 # Main Flask Application
@@ -78,6 +62,8 @@ car_sales_management/
 ├── static/                # CSS, JS, Images
 ├── requirements.txt       # Python Dependencies
 └── README.md              # Project Description File
+
+---
 
 
 
