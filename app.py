@@ -1,16 +1,16 @@
 from flask import Flask, render_template, request, redirect, url_for
 import mysql.connector
 from datetime import datetime
-from expert_system import recommend_car
+from expert_system import analyze_sales, recommend_car
 
 app = Flask(__name__)
 
-# Database connection
+
 def get_db_connection():
     return mysql.connector.connect(
         host="localhost",
         user="root",
-        password="558732",
+        password="558732",   
         database="car_sales_db"
     )
 
@@ -19,10 +19,13 @@ def index():
     conn = get_db_connection()
     cursor = conn.cursor(dictionary=True)
     cursor.execute("SELECT * FROM sales ORDER BY sale_id DESC")
-    data = cursor.fetchall()
+    sales = cursor.fetchall()
     cursor.close()
     conn.close()
-    return render_template('index.html', sales=data)
+
+    ai_insights = analyze_sales(sales)
+    # By default no recommendation shown
+    return render_template('index.html', sales=sales, ai_insights=ai_insights, recommendation=None)
 
 @app.route('/add', methods=['POST'])
 def add_sale():
@@ -34,7 +37,7 @@ def add_sale():
     conn = get_db_connection()
     cursor = conn.cursor()
     cursor.execute("""
-        INSERT INTO sales (customer_name, car_model, price , sale_date)
+        INSERT INTO sales (customer_name, car_model, price, sale_date)
         VALUES (%s, %s, %s, %s)
     """, (customer, car_model, price, date))
     conn.commit()
@@ -79,18 +82,26 @@ def edit_sale(id):
         conn.close()
         return render_template('edit.html', sale=sale)
 
-@app.route('/recommend', methods=['GET', 'POST'])
+@app.route('/recommend', methods=['POST'])
 def recommend():
-    if request.method == 'POST':
-        budget = int(request.form['budget'])
-        car_type = request.form['car_type']
-        fuel_type = request.form['fuel_type']
+    # Read form input
+    budget = request.form.get('budget')
+    purpose = request.form.get('purpose')
+    fuel = request.form.get('fuel')
 
-        recommendation = recommend_car(budget, car_type, fuel_type)
-        return render_template('recommend.html', result=recommendation)
+    # Get recommendation from expert system
+    recommendation = recommend_car(budget, purpose, fuel)
 
-    return render_template('recommend.html')
+    # Re-fetch sales & insights to render the same dashboard
+    conn = get_db_connection()
+    cursor = conn.cursor(dictionary=True)
+    cursor.execute("SELECT * FROM sales ORDER BY sale_id DESC")
+    sales = cursor.fetchall()
+    cursor.close()
+    conn.close()
 
+    ai_insights = analyze_sales(sales)
+    return render_template('index.html', sales=sales, ai_insights=ai_insights, recommendation=recommendation)
 
 if __name__ == '__main__':
     app.run(debug=True)
